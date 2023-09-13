@@ -1,0 +1,223 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: send_email
+  examples: |
+    - I want to send a mail
+    - Can you help me send an email?
+    - Let's send an email
+
+###############################################email################################################""
+- intent: provide_recipient_email
+  examples: |
+    - [example@esprint.tn]{"entity":"recipient_email"}
+    - the mail is [john.doe@example.com]{"entity":"recipient_email"}
+    - send to [example@gmail.com]{"entity":"recipient_email"}
+
+- intent: provide_email_object
+  examples: |
+    - [testingtesting]{"entity":"email_object"}
+    - The subject is [Virus Threat]{"entity":"email_object"}
+    - The object of the email is [security report]{"entity":"email_object"}
+
+- intent: provide_email_content
+  examples: |
+    - [I am sending this mail to inform you that you have a virus.]{"entity":"email_content"}
+    - The content of the email is as follows: [content content]{"entity":"email_content"}
+    - This is the body of the email: [content content]{"entity":"email_content"}
+
+- intent: sending_email
+  examples: |
+    - i want to send a mail to [tlichahmed99@gmail.com]{"entity":"recipient_email"} the object is [test]{"entity":"email_object"} saying [you have a virus]{"entity":"email_content"}
+    - send a mail to [tlichahmed99@gmail.com]{"entity":"recipient_email"} with the object of [test]{"entity":"email_object"} saying [you have a virus]{"entity":"email_content"}
+    - send a mail to [tlichahmed99@gmail.com]{"entity":"recipient_email"} saying [you have a virus]{"entity":"email_content"}
+
+- intent: warning_email
+  examples: |
+    - send a warning email to [ahmed]{"entity":"recipient_email"}
+    - warn [jhon]{"entity":"recipient_email"} about his network usage
+    - [yacine]{"entity":"recipient_email"} is misusing our network
+
+- intent: accept_request_mail
+  examples: |
+    - inform [ahmed]{"entity":"recipient_email"} that his [conge]{"entity":"request"} request has been [accepted]{"entity":"request_status"}
+    - inform [ahmed]{"entity":"recipient_email"} that his [raise]{"entity":"request"} request has been [approved]{"entity":"request_status"}
+    - tell [ahmed]{"entity":"recipient_email"} that I have [accepted]{"entity":"request_status"} his [leave]{"entity":"request"} request
+    - tell [ahmed]{"entity":"recipient_email"} that I have [approved]{"entity":"request_status"} his [sleep]{"entity":"request"} request
+    - send a mail to [ahmed]{"entity":"recipient_email"} saying that I am [accepting]{"entity":"request_status"} his [conge]{"entity":"request"} request
+
+- intent: refuse_request_mail
+  examples: |
+    - inform [ahmed]{"entity":"recipient_email"} that his [conge]{"entity":"request"} request has been [refused]{"entity":"request_status"}
+    - inform [ahmed]{"entity":"recipient_email"} that his [raise]{"entity":"request"} request has been [denied]{"entity":"request_status"}
+    - tell [ahmed]{"entity":"recipient_email"} that I have [rejected]{"entity":"request_status"} his [conge]{"entity":"request"} request
+    - tell [ahmed]{"entity":"recipient_email"} that I have [refused]{"entity":"request_status"} his [leave]{"entity":"request"} request
+    - send a mail to [ahmed]{"entity":"recipient_email"} saying that I am [declining]{"entity":"request_status"} his [paper]{"entity":"request"} request
+
+
+########################################security questions################################################""
+- intent: firewall_definition
+  examples: |
+    - what is a firewall?
+    - what is the role of a firewall?
+    - how te secure the internet with a firewall?
+    - what is a firewall?
+    - what is the role of a firewall?
+    - how do firewalls enhance network security?
+    - explain the concept of a firewall.
+    - why is a firewall important for cybersecurity?
+    - how does a firewall protect against unauthorized access?
+    - can you provide an overview of firewall operation?
+    - what are the common firewall configurations?
+    - what are the advantages of using a firewall in a network?
+
+- intent: encryption_definition
+  examples: |
+    - What is encryption?
+    - Explain how encryption works.
+    - Can you tell me about encryption?
+    - What does encryption do?
+
+- intent: improve_network_security
+  examples: |
+    - How can I enhance network security?
+    - What steps should I take to secure our network?
+    - Give me recommendations for better network security.
+    - Secure network
+    - Network security steps 
+
+- intent: incident_response
+  examples: |
+    - What should I do if there's a security breach?
+    - How do I handle a suspected security incident?
+    - Give me steps for incident response.
+    - i have a security breach
+    - i have suspicious traffic
+    - incident response steps
+
+- intent: security_training
+  examples: |
+    - How can I conduct effective security awareness training?
+    - What are the best practices for security training?
+    - Give me tips on educating employees about security.
+    - How to educate cyber awareness?
+    - how to teach employees cyber security?
+    - cyber security awaresess 
+
+################################IAM############################################
+- intent: rbac_definition
+  examples: |
+    - what is RBAC?
+    - What is role-based access controle?
+    - can i control the access based on role?
+    - how to give certain employees different access?
+
+- intent: rbac_benefits
+  examples: |
+    - What are the benefits of implementing role-based access control?
+    - why do we need rbac?
+    - why we need role-based access control?
+    - is rbac important?
+    - is role-based access control important?
+
+#####################################################################################
+- intent: nmap_scan
+  examples: |
+    - do a vulnerability scan to [192.168.1.1]{"entity":"ip_address"}
+    - do a scan to [172.10.10.1]{"entity":"ip_address"}
+    - scan [10.10.10.1]{"entity":"ip_address"}
+
+- intent: nmap_scan_range
+  examples: |
+    - do a vulnerability scan to [192.168.1.1/24]{"entity":"ip_address"}
+    - do a scan to [172.10.10.1/20]{"entity":"ip_address"}
+    - scan [10.10.10.1/16]{"entity":"ip_address"}

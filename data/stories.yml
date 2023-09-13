@@ -1,0 +1,104 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Send email scenario1
+  steps:
+  - intent: send_email
+  - action: utter_start_sending
+  - action: utter_ask_recipient_email
+  - intent: provide_recipient_email
+  - action: utter_ask_email_object
+  - intent: provide_email_object
+  - action: utter_ask_email_content
+  - intent: provide_email_content
+  - action: action_send_email
+
+- story: Send email scenario2
+  steps:
+  - intent: sending_email
+  - action: action_send_email
+
+- story: firewall def
+  steps:
+  - intent: firewall_definition
+  - action: utter_firewall
+
+- story: User asks about encryption
+  steps:
+  - intent: encryption_definition
+  - action: utter_encryption_definition
+
+- story: improve_network_security
+  steps:
+    - intent: improve_network_security
+    - action: utter_improve_network_security
+
+- story: incident_response
+  steps:
+    - intent: incident_response
+    - action: utter_incident_response
+
+- story: role-based access controle (rbac) definition
+  steps:
+    - intent: rbac_definition
+    - action: utter_rbac_definition
+
+- story: role-based access controle (rbac) benefits
+  steps:
+    - intent: rbac_benefits
+    - action: utter_rbac_benefits
+
+- story: nmap network scan
+  steps:
+  - intent: nmap_scan
+  - action: utter_nmap
+  - action: action_nmap
+
+- story: nmap network scan range
+  steps:
+  - intent: nmap_scan_range
+  - action: utter_nmap
+  - action: action_nmap_range
+
+- story: sending warnin mail
+  steps:
+  - intent: warning_email
+  - action: action_warning_email
+
+- story: accept request mail
+  steps:
+  - intent: accept_request_mail
+  - action: action_request_email
+
+- story: decline request mail
+  steps:
+  - intent: refuse_request_mail
+  - action: action_request_email

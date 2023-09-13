@@ -1,0 +1,168 @@
+version: "3.1"
+
+actions:
+  - action_send_email
+  - action_nmap
+  - action_nmap_range
+  - action_warning_email
+  - action_request_email
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - send_email
+  - provide_recipient_email
+  - provide_email_object
+  - provide_email_content
+  - sending_email
+  - firewall_definition
+  - encryption_definition
+  - rbac_benefits
+  - rbac_definition
+  - security_training
+  - incident_response
+  - improve_network_security
+  - nmap_scan
+  - nmap_scan_range
+  - warning_email
+  - refuse_request_mail
+  - accept_request_mail
+
+entities:
+  - recipient_email
+  - email_object
+  - email_content
+  - ip_address
+  - request
+  - request_status
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/4clqUdj.jpeg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_ask_recipient_email:
+  - text: "To whom would you like to send the email?"
+
+  utter_ask_email_object:
+  - text: "What is the object of the email?"
+
+  utter_ask_email_content:
+  - text: "What is the content of the email?"
+
+  utter_start_sending:
+  - text: "sure.."
+
+  utter_firewall:
+  - text: " A firewall is a network security device that acts as a barrier between a trusted internal network and an untrusted external network, such as the internet. Its primary role is to monitor and control incoming and outgoing network traffic based on predetermined security rules. Firewalls enhance network security by filtering and blocking potentially malicious or unauthorized traffic, thus helping to protect against cyber threats and unauthorized access attempts."
+
+  utter_encryption_definition:
+  - text: "Encryption is a process of converting plaintext data into an unreadable format called ciphertext using an algorithm and a cryptographic key. It ensures that only authorized parties with the correct decryption key can transform the ciphertext back into its original plaintext form. This helps to protect sensitive information during transmission or storage, making it unintelligible to unauthorized individuals who may intercept the data. With encryption, data confidentiality and security are enhanced, safeguarding sensitive information from potential cyber threats and unauthorized access."
+
+  utter_improve_network_security:
+  - text: "To enhance network security, consider the following:\n
+    - Regularly update and patch all software and devices.\n
+    - Implement strong access controls and user authentication.\n
+    - Use firewalls to filter incoming and outgoing network traffic.\n
+    - Encrypt sensitive data in transit and at rest.\n
+    - Monitor network activity for unusual behavior."
+
+  utter_incident_response:
+  - text: "If you suspect a security breach, follow these incident response steps:\n
+    - Isolate affected systems to prevent further damage.\n
+    - Notify relevant stakeholders, including management and legal.\n
+    - Collect evidence and logs related to the incident.\n
+    - Assess the scope and impact of the breach.\n
+    - Remediate vulnerabilities and implement necessary patches.\n
+    - Communicate with affected parties and customers, if required.\n
+    - Learn from the incident and update security measures."
+
+  utter_security_training:
+  - text: "To conduct effective security awareness training, consider the following:\n
+    - Tailor the training content to the organization's specific risks.\n
+    - Use real-life examples and scenarios to make the training relatable.\n
+    - Provide clear guidelines on password management and safe browsing.\n
+    - Offer interactive sessions, quizzes, and simulations.\n
+    - Encourage reporting of suspicious activities or incidents."
+
+  utter_rbac_definition:
+  - text: "Role-Based Access Control (RBAC) is a security model where users are assigned roles with specific permissions, controlling their access to resources. Roles group permissions, making management easier while reducing unauthorized access risks. It's used in systems to ensure scalable, compliant, and well-organized access control."
+
+  utter_rbac_benefits:
+  - text: "Role-Based Access Control (RBAC) offers several benefits, including:\n
+    - Enhanced security: Users only have access to what they need for their roles.\n
+    - Reduced risk: Unauthorized access is minimized, reducing the attack surface.\n
+    - Compliance: RBAC helps meet regulatory requirements by controlling access.\n
+    - Simplified administration: Managing permissions becomes more efficient."
+
+  utter_nmap:
+  - text: "starting network scan..."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+slots:
+  recipient_email:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: recipient_email
+    initial_value: null
+    influence_conversation: true
+  email_object:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: email_object
+    initial_value: null
+    influence_conversation: true
+  email_content:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: email_content
+    initial_value: null
+    influence_conversation: true
+  ip_address:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: ip_address
+    initial_value: null
+    influence_conversation: true
+  request:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: request
+    initial_value: null
+    influence_conversation: true
+  request_status:
+    type: rasa.shared.core.slots.TextSlot
+    mappings:
+    - type: from_entity
+      entity: request_status
+    initial_value: null
+    influence_conversation: true
